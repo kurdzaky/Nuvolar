@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="RestAssuredEndToEndTests">
+    <listeners>
+        <listener class-name="com.nuvolar.QATestListener" />
+    </listeners>
+    <test name="MyTest" parallel="classes" verbose="2">
+        <groups>
+            <run>
+                <include name="backend"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.nuvolar.tests.backend.ApiTests" />
+        </classes>
+    </test>
+</suite>
