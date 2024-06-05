@@ -23,12 +23,13 @@ public WebElement quantityOption(int numberOfItems) {
     return wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id(String.format("quantity_%s", numberOfItems)))));
 }
     public WebElement addCartButton() {
-        return driver.findElement(By.id("add-to-cart-button"));
+        return wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("add-to-cart-button"))));
     }
     public WebElement itemPrice() {
-        return driver.findElement(By.cssSelector("span.priceToPay span.a-price-whole"));
+        return wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("span.priceToPay span.a-price-whole"))));
     }
     public WebElement cartButton() {
-        return driver.findElement(By.id("nav-cart-count"));
+
+        return wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("nav-cart-count"))));
     }
 }

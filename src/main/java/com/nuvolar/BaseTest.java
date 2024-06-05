@@ -1,6 +1,7 @@
 package com.nuvolar;
 
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
@@ -8,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 
 import java.net.URL;
 import java.util.logging.*;
+
 
 public class BaseTest {
     private static final Logger logger = Logger.getLogger(BaseTest.class.getName());

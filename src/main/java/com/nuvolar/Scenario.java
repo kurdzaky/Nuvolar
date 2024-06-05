@@ -1,4 +1,4 @@
-package com.nuvolar.tests;
+package com.nuvolar;
 
 public @interface Scenario {
 

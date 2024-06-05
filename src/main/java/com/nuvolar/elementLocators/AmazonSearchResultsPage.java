@@ -18,6 +18,6 @@ public class AmazonSearchResultsPage {
     }
 
     public WebElement item(int itemIndex) {
-        return wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector(String.format("div[data-cel-widget='search_result_%s']", itemIndex)))));
+        return wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector(String.format("div[data-cel-widget='MAIN-SEARCH_RESULTS-%s']", itemIndex)))));
     }
 }

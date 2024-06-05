@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="RestAssuredEndToEndTests">
-    <listeners>
-        <listener class-name="com.nuvolar.QATestListener" />
-    </listeners>
     <test name="MyTest" parallel="classes" verbose="2">
         <groups>
             <run>
@@ -14,3 +11,4 @@
         </classes>
     </test>
 </suite>
+

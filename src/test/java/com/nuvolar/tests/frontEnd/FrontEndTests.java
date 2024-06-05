@@ -6,13 +6,15 @@ import com.nuvolar.elementLocators.AmazonLandingPage;
 import com.nuvolar.elementLocators.AmazonSearchResultsPage;
 import com.nuvolar.elementLocators.CartPage;
 
-import com.nuvolar.tests.Scenario;
+import com.nuvolar.Scenario;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class FrontEndTests extends BaseTest {
+
+
     AmazonSearchResultsPage amazonSearchResults = new AmazonSearchResultsPage(driver);
     AmazonLandingPage amazonLanding = new AmazonLandingPage(driver);
     AmazonItemPage amazonItem = new AmazonItemPage(driver);
@@ -31,11 +33,9 @@ public class FrontEndTests extends BaseTest {
             "8) Change the quantity for item selected at step 3 from 2 to 1 item in Cart",
             "9) Assert total price and quantity are changed correctly"})
     @Test
-    public void verifyPriceAndAmountOfItemsAddedToCartIsCorrectAndUpdatesAccordinglyToNumberAndPriceOfAddedItem() throws InterruptedException {
-
+    public void verifyPriceAndAmountOfItemsAddedToCartIsCorrectAndUpdatesAccordinglyToNumberAndPriceOfAddedItem() {
         amazonLanding.searchTextField().sendKeys("hats for men");
         amazonLanding.searchButton().click();
-Thread.sleep(5000);
         amazonSearchResults.item(2).click();
 
         amazonItem.quantityDropdown().click();

@@ -1,10 +1,12 @@
 package com.nuvolar.tests.backend;
 
 import com.nuvolar.BaseTestConfiguration;
+import com.nuvolar.QATestListener;
 import com.nuvolar.dataproviders.DataProviders;
 import com.nuvolar.model.Pets;
 import com.nuvolar.operations.PetApi;
-import com.nuvolar.tests.Scenario;
+import com.nuvolar.Scenario;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
@@ -18,7 +20,7 @@ public class ApiTests extends BaseTestConfiguration {
 
     @Scenario(description = "Test pet/findByStatus endpoint and make sure it returns data according to the scheme and return status code 200",
             steps = {"Execute get request in pet/findByStatus endpoint - status code 200, and response is according to the scheme",})
-    @Test(groups = {"backend"}, dataProvider = "petStatus", dataProviderClass = DataProviders.class)
+    @Test(dataProvider = "petStatus", dataProviderClass = DataProviders.class)
     public void testExecuteGetRequestPetFindByStatusWithAllStatuses_makeSureEndpointReturnsDataAccordingScheme(String status) {
         HashMap<String, List<String>> queryParamMap = new HashMap<>();
         queryParamMap.put(PATH_PARAM_STATUS, singletonList(status));
@@ -27,5 +29,6 @@ public class ApiTests extends BaseTestConfiguration {
                 .statusCode(200)
                 .extract()
                 .as(Pets[].class);
+
     }
     }
